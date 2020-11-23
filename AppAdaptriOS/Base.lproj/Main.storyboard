@@ -1,24 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh3-Q0-OU3" userLabel="artist" customClass="MetadataLabel">
+                                <rect key="frame" x="24" y="745" width="366" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="format" value="%ARTIST"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zm-Ex-DvK" userLabel="album" customClass="MetadataLabel">
+                                <rect key="frame" x="24" y="765" width="366" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="format" value="%ALBUM"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-F3-HWR" userLabel="track" customClass="MetadataLabel">
+                                <rect key="frame" x="24" y="725" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="format" value="%TRACK"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-DQ-JUv" userLabel="Player Controls">
+                                <rect key="frame" x="47" y="778" width="320" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6o9-Th-FWr" userLabel="like" customClass="LikeButton">
+                                        <rect key="frame" x="31.5" y="24" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Gk5-Qe-iLP"/>
+                                            <constraint firstAttribute="width" constant="44" id="LQr-Ks-L0F"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="FeedMedia.bundle/thumbsup_selected"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6K-TF-Tya" userLabel="play/pause" customClass="PlayPauseButton">
+                                        <rect key="frame" x="191.5" y="24" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="6wU-LI-Xvn"/>
+                                            <constraint firstAttribute="width" constant="44" id="G81-W8-EaA"/>
+                                        </constraints>
+                                        <state key="normal" image="play.fill" catalog="system">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="pause.fill" catalog="system"/>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-Bb-QOx" customClass="AudioProgressView">
+                                        <rect key="frame" x="44" y="8" width="232" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="232" id="Egg-QI-2Kb"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="0.1299507171" green="0.60234385729999995" blue="0.66390824319999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zc-pb-9iB" userLabel="elapsed" customClass="ElapsedTimeLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="noD-Ym-gbZ"/>
+                                            <constraint firstAttribute="width" constant="36" id="zbk-to-0Ys"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="248-w7-vqW" userLabel="remaining" customClass="RemainingTimeLabel">
+                                        <rect key="frame" x="284" y="0.0" width="36" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="VZo-Nm-hM2"/>
+                                            <constraint firstAttribute="height" constant="21" id="f0Z-8r-RAG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KY-ej-jMu" userLabel="skip" customClass="SkipButton">
+                                        <rect key="frame" x="244.5" y="24" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Lq1-8t-6pR"/>
+                                            <constraint firstAttribute="height" constant="44" id="uc1-LN-oIN"/>
+                                        </constraints>
+                                        <state key="normal" image="play.slash" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9zc-pb-9iB" firstAttribute="leading" secondItem="a7E-DQ-JUv" secondAttribute="leading" id="AQN-Ac-xJE"/>
+                                    <constraint firstAttribute="centerX" secondItem="cPh-Bb-QOx" secondAttribute="centerX" id="Gub-wB-srH"/>
+                                    <constraint firstAttribute="trailing" secondItem="248-w7-vqW" secondAttribute="trailing" id="LKh-YM-kXD"/>
+                                    <constraint firstItem="6o9-Th-FWr" firstAttribute="centerX" secondItem="a7E-DQ-JUv" secondAttribute="trailing" multiplier="1:6" id="Lji-IM-NaI"/>
+                                    <constraint firstAttribute="bottom" secondItem="cPh-Bb-QOx" secondAttribute="bottom" constant="56" id="PsX-cQ-dqo"/>
+                                    <constraint firstAttribute="bottom" secondItem="V6K-TF-Tya" secondAttribute="bottom" id="TJK-dR-jKN"/>
+                                    <constraint firstAttribute="height" constant="68" id="Vca-wq-KA4"/>
+                                    <constraint firstAttribute="width" constant="320" id="cOO-VO-PeS"/>
+                                    <constraint firstItem="4KY-ej-jMu" firstAttribute="centerX" secondItem="a7E-DQ-JUv" secondAttribute="trailing" multiplier="5:6" id="cmo-gG-Yjg"/>
+                                    <constraint firstAttribute="bottom" secondItem="9zc-pb-9iB" secondAttribute="bottom" constant="47" id="g4J-GB-1Wc"/>
+                                    <constraint firstAttribute="bottom" secondItem="6o9-Th-FWr" secondAttribute="bottom" id="ift-Ou-gHp"/>
+                                    <constraint firstAttribute="bottom" secondItem="248-w7-vqW" secondAttribute="bottom" constant="47" id="kqJ-Zh-uEm"/>
+                                    <constraint firstAttribute="bottom" secondItem="4KY-ej-jMu" secondAttribute="bottom" id="n7T-g1-ibq"/>
+                                    <constraint firstItem="V6K-TF-Tya" firstAttribute="centerX" secondItem="a7E-DQ-JUv" secondAttribute="trailing" multiplier="4:6" id="zOf-Ll-M7m"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="Eh3-Q0-OU3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="5x8-LM-hdR"/>
+                            <constraint firstAttribute="trailing" secondItem="9zm-Ex-DvK" secondAttribute="trailing" constant="24" id="7KO-TP-ERD"/>
+                            <constraint firstItem="fI6-F3-HWR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="9NM-Sj-bnm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a7E-DQ-JUv" secondAttribute="trailing" constant="47" id="ANA-M9-Uym"/>
+                            <constraint firstItem="a7E-DQ-JUv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="Bgs-jL-kRX"/>
+                            <constraint firstAttribute="trailing" secondItem="Eh3-Q0-OU3" secondAttribute="trailing" constant="24" id="DZU-8O-VFH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a7E-DQ-JUv" secondAttribute="bottom" constant="16" id="ICc-kP-F6p"/>
+                            <constraint firstItem="a7E-DQ-JUv" firstAttribute="top" secondItem="9zm-Ex-DvK" secondAttribute="bottom" constant="13" id="Xmc-Al-fAy"/>
+                            <constraint firstItem="Eh3-Q0-OU3" firstAttribute="top" secondItem="9zm-Ex-DvK" secondAttribute="bottom" constant="-20" id="h7R-lV-9CL"/>
+                            <constraint firstItem="9zm-Ex-DvK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="qfZ-HC-OXj"/>
+                            <constraint firstItem="fI6-F3-HWR" firstAttribute="top" secondItem="Eh3-Q0-OU3" secondAttribute="bottom" constant="-20" id="sd5-3m-B1n"/>
+                            <constraint firstAttribute="trailing" secondItem="fI6-F3-HWR" secondAttribute="trailing" constant="16" id="wg7-vG-UuP"/>
+                            <constraint firstItem="Eh3-Q0-OU3" firstAttribute="top" secondItem="fI6-F3-HWR" secondAttribute="bottom" constant="20" id="zq1-3j-zri"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="50"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FeedMedia.bundle/thumbsup_selected" width="1280" height="720"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="play.slash" catalog="system" width="120" height="128"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Adaptr/Adaptr.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AdaptrAudioPlayer setClientToken:@"demo" secret:@"demo"];
     return YES;
 }
 
