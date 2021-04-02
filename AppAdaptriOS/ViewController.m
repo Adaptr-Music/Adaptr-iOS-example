@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    ADLogSetLevel(ADLogLevelDebug);
     AdaptrAudioPlayer *player = [AdaptrAudioPlayer sharedPlayer];
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     [player whenAvailable:^{
