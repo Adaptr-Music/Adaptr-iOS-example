@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [AdaptrAudioPlayer setClientToken:@"demo" secret:@"demo"];
+    [AdaptrAudioPlayer setClientToken:@"adaptr" secret:@"adaptr"];
     return YES;
 }
 
